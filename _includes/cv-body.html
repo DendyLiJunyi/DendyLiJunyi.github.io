@@ -1,0 +1,42 @@
+{%- comment -%}
+  Shared CV markup. Rendered by BOTH the themed page (_tabs/cv.md) and the
+  clean print view (_layouts/cv-print.html). Content comes from _data/cv.yml —
+  edit that file, not this one.
+{%- endcomment -%}
+{%- assign cv = site.data.cv -%}
+<header class="cv-header">
+  <h1 class="cv-name">{{ cv.name }}</h1>
+  {%- if cv.tagline %}<div class="cv-tagline">{{ cv.tagline }}</div>{% endif -%}
+  {%- if cv.contacts %}
+  <div class="cv-contacts">
+    {%- for c in cv.contacts -%}
+      {%- unless forloop.first %}<span class="sep">·</span>{% endunless -%}
+      {%- if c.url %}<a href="{{ c.url }}">{{ c.text }}</a>{% else %}<span>{{ c.text }}</span>{% endif -%}
+    {%- endfor -%}
+  </div>
+  {%- endif -%}
+</header>
+
+{%- for section in cv.sections %}
+<section class="cv-section">
+  <h2 class="cv-section-title">{{ section.title }}</h2>
+  {%- for e in section.entries %}
+  <div class="cv-entry">
+    <div class="cv-entry-head">
+      <div class="cv-entry-title">
+        {%- if e.url %}<a href="{{ e.url }}">{{ e.title }}</a>{% else %}{{ e.title }}{% endif -%}
+      </div>
+      {%- if e.date or e.location %}
+      <div class="cv-entry-meta">{{ e.date }}{% if e.date and e.location %} · {% endif %}{{ e.location }}</div>
+      {%- endif -%}
+    </div>
+    {%- if e.subtitle %}<div class="cv-entry-sub">{{ e.subtitle }}</div>{% endif -%}
+    {%- if e.details %}
+    <ul class="cv-details">
+      {%- for d in e.details %}<li>{{ d }}</li>{% endfor -%}
+    </ul>
+    {%- endif -%}
+  </div>
+  {%- endfor -%}
+</section>
+{%- endfor -%}

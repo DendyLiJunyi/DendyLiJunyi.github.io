@@ -1,0 +1,66 @@
+# =============================================================================
+#  CV DATA  —  Edit this file to add / delete items. Everything else is layout.
+#  Guidelines:
+#    * To add an entry, copy an existing "- title:" block and edit it.
+#    * To delete an entry, remove its "- title:" block.
+#    * Any optional field (subtitle, date, location, url, details) can be omitted.
+#    * "details" is a bullet list; delete the whole key if you don't want bullets.
+# =============================================================================
+
+# ---- Header ----------------------------------------------------------------
+name: Dendy Li  (李骏一)
+tagline: PhD Student
+
+# Contact line under the name. Delete any you don't want; add more freely.
+contacts:
+  - text: dendyjunyili@gmail.com
+    url: mailto:dendyjunyili@gmail.com
+  - text: github.com/DendyLiJunyi
+    url: https://github.com/DendyLiJunyi
+  - text: DendyLiJunyi.github.io
+    url: https://DendyLiJunyi.github.io
+  - text: Maryland, USA
+
+# ---- Sections --------------------------------------------------------------
+# Each section has a "title" and a list of "entries".
+sections:
+  - title: Education
+    entries:
+      - title: University of Maryland
+        subtitle: Ph.D. in Computer Science
+        date: 2026 – Present
+        location: College Park, MD
+        details:
+          - "Research focus: programming languages / type theory."
+      - title: Your Undergraduate University
+        subtitle: B.S. in Computer Science
+        date: 20XX – 20XX
+        location: City, Country
+
+  - title: Research Experience
+    entries:
+      - title: Research Assistant
+        subtitle: Lab / Group name
+        date: 2026 – Present
+        location: University of Maryland
+        details:
+          - Describe a project or contribution here.
+          - Add another bullet, or delete this list entirely.
+
+  - title: Publications
+    entries:
+      - title: "Paper title goes here"
+        subtitle: "Author A, Author B, You. Venue, Year."
+        url: https://example.com
+
+  - title: Skills
+    entries:
+      - title: Programming
+        subtitle: "OCaml, Rust, Python, Haskell"
+      - title: Languages
+        subtitle: "Chinese (native), English (fluent)"
+
+  - title: Awards & Misc
+    entries:
+      - title: Some Award
+        date: 2025
