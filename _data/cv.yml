@@ -5,62 +5,111 @@
 #    * To delete an entry, remove its "- title:" block.
 #    * Any optional field (subtitle, date, location, url, details) can be omitted.
 #    * "details" is a bullet list; delete the whole key if you don't want bullets.
+#    * Lines starting with "#" are comments / TODOs — they do NOT appear on the CV.
 # =============================================================================
 
 # ---- Header ----------------------------------------------------------------
-name: Dendy Li  (李骏一)
-tagline: PhD Student
+name: Junyi Li  (李骏一)
+tagline: M.Sc. Mathematics @ NUS · type theory · functional programming · proof assistants
+
+summary: >-
+  Master's student at the National University of Singapore. A nerd who loves
+  Emacs and mathematics — interested in type theory, functional programming,
+  formalizing mathematics in proof assistants, and picking up new things
+  whenever the need arises.
 
 # Contact line under the name. Delete any you don't want; add more freely.
 contacts:
-  - text: dendyjunyili@gmail.com
-    url: mailto:dendyjunyili@gmail.com
+  - text: dendyli618@outlook.com
+    url: mailto:dendyli618@outlook.com
   - text: github.com/DendyLiJunyi
     url: https://github.com/DendyLiJunyi
   - text: DendyLiJunyi.github.io
     url: https://DendyLiJunyi.github.io
-  - text: Maryland, USA
+  - text: Singapore
+  # --- PRIVATE details, hidden because this page is PUBLIC on the web. ---
+  # Uncomment a line to show it on BOTH the web page and the printed PDF.
+  # - text: "(+65) 8657 2075"
+  # - text: "Blk 358 Clementi Avenue 2 #03-285, 120358"
 
 # ---- Sections --------------------------------------------------------------
-# Each section has a "title" and a list of "entries".
 sections:
   - title: Education
     entries:
-      - title: University of Maryland
-        subtitle: Ph.D. in Computer Science
-        date: 2026 – Present
-        location: College Park, MD
+      - title: National University of Singapore
+        subtitle: M.Sc. in Mathematics
+        date: Sep 2023 – Present            # TODO: expected graduation date
+        location: Singapore
+        # details:
+        #   - "Thesis: TODO — add title"     # TODO: thesis title
+        #   - "Advisor: TODO"                # TODO: advisor
+      - title: Tianjin University
+        subtitle: B.S. in Financial Mathematics
+        date: Sep 2020 – Jun 2024
+        location: Tianjin, China
+
+  - title: Functional Programming & Formalization
+    entries:
+      - title: Research Intern — Celia Innovation Product
+        subtitle: Huawei Singapore Research Center
+        date: Mar 2025 – Present            # TODO: end date if it has ended
+        location: Singapore
         details:
-          - "Research focus: programming languages / type theory."
-      - title: Your Undergraduate University
-        subtitle: B.S. in Computer Science
-        date: 20XX – 20XX
-        location: City, Country
+          - Developing a Lean-based lemma library for Chinese Gaokao mathematics (sequences and calculus) to support structured formalization of exam problems.
+          - Designing an LLM-aided automated prover for Gaokao-style problems, integrating retrieval-augmented generation (RAG) with Lean's formalization pipeline to improve deductive accuracy.
 
-  - title: Research Experience
-    entries:
-      - title: Research Assistant
-        subtitle: Lab / Group name
-        date: 2026 – Present
-        location: University of Maryland
+      - title: OPLSS 2026 — Oregon Programming Languages Summer School
+        subtitle: University of Oregon
+        date: Jun 22 – Jul 4, 2026
+        location: Eugene, OR, USA
+        # details:                          # TODO: add what you studied, if you like
+
+      - title: AI for Mathematics
+        subtitle: Great Bay University
+        date: Jan 2025
+        location: Dongguan, China
         details:
-          - Describe a project or contribution here.
-          - Add another bullet, or delete this list entirely.
+          - Studied techniques for formalizing convex-analysis problems, using Lean to ensure precise formalizations of theoretical results.
+          - Formalized basic definitions in convex analysis in groups, contributing to precise, formal proofs within the Lean framework.
 
-  - title: Publications
-    entries:
-      - title: "Paper title goes here"
-        subtitle: "Author A, Author B, You. Venue, Year."
-        url: https://example.com
+      - title: Abstract Algebra Data Annotation
+        subtitle: BICMR, Peking University
+        date: Dec 2024 – Feb 2025
+        location: Beijing, China
+        details:
+          - Applied Lean to formalize and verify the correctness of theorems and results in abstract algebra.
 
-  - title: Skills
-    entries:
-      - title: Programming
-        subtitle: "OCaml, Rust, Python, Haskell"
-      - title: Languages
-        subtitle: "Chinese (native), English (fluent)"
+      - title: Calculus Game
+        subtitle: National University of Singapore
+        date: Aug – Dec 2024
+        location: Singapore
+        details:
+          - Formalized basic differentiation problems in calculus, ensuring rigorous proofs within Lean's framework.
+          - Studied mathematical concepts using the Lean proof assistant, supervised by Prof. Huanchen Bao.
 
-  - title: Awards & Misc
+      - title: Autumn School "Proof and Computation"
+        subtitle: Udo Keller Stiftung (Hamburg) & COST Action EuroProofNet
+        date: Sep 2024
+        location: Fischbachau, Germany
+        details:
+          - Studied recent advances in type theory and related areas of mathematical logic.
+          - Investigated program extraction and its implementation in the Agda proof assistant.
+          - Examined the proof of the Four-Color Theorem in the Coq proof assistant.
+          - Completed an introductory course in MINLOG, a proof assistant based on minimal logic.
+
+      - title: School on Univalent Mathematics 2024
+        subtitle: University of Minnesota
+        date: Jul – Aug 2024
+        location: Minneapolis, MN, USA
+        details:
+          - Explored foundational concepts in Homotopy Type Theory and their implementation in the Coq proof assistant.
+
+  - title: Projects & Service
     entries:
-      - title: Some Award
-        date: 2025
+      - title: ArkLib
+        subtitle: Open-source contributor — Lean 4 · Sumcheck · Verified-zkEVM
+        # date: TODO — contribution period
+        # details:
+        #   - "TODO: describe your Sumcheck / Verified-zkEVM contribution."
+      - title: SIGPLAN-M Mentorship
+        # subtitle: TODO — mentee or mentor?  (date range)

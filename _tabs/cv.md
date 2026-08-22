@@ -28,6 +28,7 @@ title: CV
   .cv-wrap .cv-tagline { color: var(--text-muted-color, #888); margin: .1rem 0 .5rem; }
   .cv-wrap .cv-contacts { font-size: .85rem; color: var(--text-muted-color, #888); }
   .cv-wrap .cv-contacts .sep { margin: 0 6px; opacity: .5; }
+  .cv-wrap .cv-summary { margin: .7rem 0 0; font-size: .92rem; }
 
   .cv-wrap .cv-section { margin-top: 1.6rem; }
   .cv-wrap .cv-section-title {
