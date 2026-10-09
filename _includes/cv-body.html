@@ -19,8 +19,9 @@
 </header>
 
 {%- for section in cv.sections %}
-<section class="cv-section">
+<section class="cv-section{% if section.print_break %} cv-page-break{% endif %}">
   <h2 class="cv-section-title">{{ section.title }}</h2>
+  {%- if section.text %}<p class="cv-section-text">{{ section.text }}</p>{% endif -%}
   {%- for e in section.entries %}
   <div class="cv-entry">
     <div class="cv-entry-head">
@@ -32,6 +33,7 @@
       {%- endif -%}
     </div>
     {%- if e.subtitle %}<div class="cv-entry-sub">{{ e.subtitle }}</div>{% endif -%}
+    {%- if e.description %}<p class="cv-entry-description">{{ e.description }}</p>{% endif -%}
     {%- if e.details %}
     <ul class="cv-details">
       {%- for d in e.details %}<li>{{ d }}</li>{% endfor -%}

@@ -1,27 +1,6 @@
-# =============================================================================
-#  CV DATA  —  Edit this file to add / delete items. Everything else is layout.
-#  Guidelines:
-#    * To add an entry, copy an existing "- title:" block and edit it.
-#    * To delete an entry, remove its "- title:" block.
-#    * Any optional field (subtitle, date, location, url, details) can be omitted.
-#    * "details" is a bullet list; delete the whole key if you don't want bullets.
-#    * Lines starting with "#" are comments / TODOs — they do NOT appear on the CV.
-# =============================================================================
-
-# ---- Header ----------------------------------------------------------------
+# Shared content for the website CV and A4 print view.
+# Evidence gaps and export instructions are recorded in tools/cv-review.md.
 name: Junyi Li
-tagline: NUS M.Sc. Mathematics graduate · cryptography · functional programming · formal methods
-
-summary: >-
-  I’m a graduate of the National University of Singapore with an M.Sc. in
-  Mathematics. I’m excited about making everything that happens in the digital
-  world more private, secure, and trustworthy. Towards this goal, I combine ideas
-  from cryptography—especially zero-knowledge proofs and zk-SNARKs—with functional
-  programming and formal methods. I’m particularly interested in the full stack
-  of programmable cryptosystems, from their mathematical foundations and formal
-  verification to their implementation and applications in blockchains.
-
-# Contact line under the name. Delete any you don't want; add more freely.
 contacts:
   - text: dendyli618@outlook.com
     url: mailto:dendyli618@outlook.com
@@ -30,98 +9,91 @@ contacts:
   - text: DendyLiJunyi.github.io
     url: https://DendyLiJunyi.github.io
   - text: Singapore
-  # --- PRIVATE details, hidden because this page is PUBLIC on the web. ---
-  # Uncomment a line to show it on BOTH the web page and the printed PDF.
-  # - text: "(+65) 8657 2075"
-  # - text: "Blk 358 Clementi Avenue 2 #03-285, 120358"
 
-# ---- Sections --------------------------------------------------------------
 sections:
   - title: Education
     entries:
       - title: National University of Singapore
-        subtitle: M.Sc. in Mathematics (graduated)
+        subtitle: M.Sc. in Mathematics (coursework-based)
         date: Aug 2024 – Jul 2026
         location: Singapore
-        # details:
-        #   - "Thesis: TODO — add title"     # TODO: thesis title
-        #   - "Advisor: TODO"                # TODO: advisor
       - title: Tianjin University
         subtitle: B.S. in Financial Mathematics
         date: Sep 2020 – Jun 2024
         location: Tianjin, China
 
-  - title: Functional Programming & Formalization
+  - title: Research Interests
+    text: >-
+      Mathematics graduate with experience in Lean-based formalization and proof
+      automation. Research interests include formal methods and machine-checked
+      verification of cryptographic systems, particularly zero-knowledge proofs
+      and SNARKs, and connections between mathematical specifications and
+      executable implementations.
+
+  - title: Research Experience
     entries:
       - title: LeanHammer — SMT-based Proof Automation in Lean 4
-        subtitle: University of Edinburgh
+        subtitle: "Research Intern, University of Edinburgh · Supervisor: Prof. Wenda Li"
         date: Sep 2025 – Feb 2026
         location: Edinburgh, United Kingdom
-        url: https://github.com/DendyLiJunyi/LeanHammer
+        url: https://github.com/DendyLiJunyi/LeanHammer/tree/reconstructed
+        description: Independent internship project, separate from the public LeanHammer project of the same name.
         details:
-          - Developed a Lean 4 tactic integrating premise selection, goal-driven monomorphization, and SMT-LIB translation with Z3 and cvc5.
-          - Integrated partial proof reconstruction with Duper, using SMT unsatisfiable cores to guide the generation of Lean proof terms.
-
+          - Developed a Lean 4 tactic integrating premise selection, goal-driven monomorphization, and SMT-LIB translation for Z3 and cvc5.
+          - Implemented partial proof reconstruction using Duper, with SMT unsatisfiable cores guiding reconstruction of Lean proof terms.
+          - Drew on Isabelle’s Sledgehammer, Lean-auto, and Duper.
       - title: Research Intern — Celia Innovation Product
         subtitle: Huawei Singapore Research Center
         date: Mar 2025 – Aug 2025
         location: Singapore
         details:
-          - Developed a Lean-based lemma library for Chinese Gaokao mathematics (sequences and calculus) to support structured formalization of exam problems.
-          - Designed an LLM-aided automated prover for Gaokao-style problems, integrating retrieval-augmented generation (RAG) with Lean's formalization pipeline to improve deductive accuracy.
+          - Developed a Lean lemma library for Chinese Gaokao mathematics, covering sequences and calculus.
+          - Designed an LLM-assisted prover for Gaokao-style problems, combining retrieval-augmented generation (RAG) with a Lean formalization pipeline.
 
-      - title: OPLSS 2026 — Oregon Programming Languages Summer School
-        subtitle: University of Oregon
-        date: Jun 22 – Jul 4, 2026
-        location: Eugene, OR, USA
-        # details:                          # TODO: add what you studied, if you like
-
-      - title: AI for Mathematics
-        subtitle: Great Bay University
-        date: Jan 2025
-        location: Dongguan, China
-        details:
-          - Studied techniques for formalizing convex-analysis problems, using Lean to ensure precise formalizations of theoretical results.
-          - Formalized basic definitions in convex analysis in groups, contributing to precise, formal proofs within the Lean framework.
-
+  - title: Selected Projects and Open-Source Contributions
+    print_break: true
+    entries:
+      - title: ArkLib
+        subtitle: Open-source contributor — Lean 4 · Sumcheck · Verified-zkEVM
+        # Existing claim retained pending confirmation; see tools/cv-review.md.
       - title: Abstract Algebra Data Annotation
         subtitle: BICMR, Peking University
         date: Dec 2024 – Feb 2025
         location: Beijing, China
         details:
-          - Applied Lean to formalize and verify the correctness of theorems and results in abstract algebra.
-
+          - Formalized abstract-algebra results and checked their proofs in Lean.
       - title: Calculus Game
-        subtitle: National University of Singapore
+        subtitle: "National University of Singapore · Supervisor: Prof. Huanchen Bao"
         date: Aug – Dec 2024
         location: Singapore
         details:
-          - Formalized basic differentiation problems in calculus, ensuring rigorous proofs within Lean's framework.
-          - Studied mathematical concepts using the Lean proof assistant, supervised by Prof. Huanchen Bao.
-
-      - title: Autumn School "Proof and Computation"
-        subtitle: Udo Keller Stiftung (Hamburg) & COST Action EuroProofNet
-        date: Sep 2024
-        location: Fischbachau, Germany
+          - Formalized basic differentiation problems in Lean.
+      - title: Convex-Analysis Formalization — AI for Mathematics
+        subtitle: Great Bay University workshop
+        date: Jan 2025
+        location: Dongguan, China
         details:
-          - Studied recent advances in type theory and related areas of mathematical logic.
-          - Investigated program extraction and its implementation in the Agda proof assistant.
-          - Examined the proof of the Four-Color Theorem in the Coq proof assistant.
-          - Completed an introductory course in MINLOG, a proof assistant based on minimal logic.
+          - Contributed to group formalization of basic definitions in convex analysis using Lean.
 
-      - title: School on Univalent Mathematics 2024
-        subtitle: University of Minnesota
-        date: Jul – Aug 2024
-        location: Minneapolis, MN, USA
-        details:
-          - Explored foundational concepts in Homotopy Type Theory and their implementation in the Coq proof assistant.
-
-  - title: Projects & Service
+  # Add Publications here once author order and full metadata are verified.
+  - title: Summer Schools and Additional Training
     entries:
-      - title: ArkLib
-        subtitle: Open-source contributor — Lean 4 · Sumcheck · Verified-zkEVM
-        # date: TODO — contribution period
-        # details:
-        #   - "TODO: describe your Sumcheck / Verified-zkEVM contribution."
+      - title: Oregon Programming Languages Summer School (OPLSS 2026)
+        subtitle: University of Oregon · Eugene, OR, USA
+        date: 22 Jun – 4 Jul 2026
+      - title: Autumn School “Proof and Computation”
+        subtitle: Udo Keller Stiftung & COST Action EuroProofNet · Fischbachau, Germany
+        date: Sep 2024
+      - title: School on Univalent Mathematics
+        subtitle: University of Minnesota · Minneapolis, MN, USA
+        date: Jul – Aug 2024
       - title: SIGPLAN-M Mentorship
-        # subtitle: TODO — mentee or mentor?  (date range)
+        subtitle: "Mentee · Mentor: Mukesh Tiwari"
+
+  - title: Technical Skills
+    text: >-
+      <strong>Practical experience:</strong> Lean 4 mathematical formalization and
+      tactic development; premise selection and monomorphization; SMT-LIB
+      translation and integration with Z3 and cvc5; partial proof reconstruction
+      with Duper.<br>
+      <strong>System design:</strong> retrieval-augmented, LLM-assisted theorem proving.

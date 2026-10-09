@@ -43,7 +43,7 @@ title: CV
 
   .cv-wrap .cv-entry { margin-bottom: .9rem; }
   .cv-wrap .cv-entry-head {
-    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 16px;
   }
   .cv-wrap .cv-entry-title { font-weight: 700; }
   .cv-wrap .cv-entry-meta {
@@ -51,6 +51,8 @@ title: CV
     white-space: nowrap; text-align: right;
   }
   .cv-wrap .cv-entry-sub { font-style: italic; }
+  .cv-wrap .cv-section-text { margin: 0; }
+  .cv-wrap .cv-entry-description { margin: .3rem 0 0; }
   .cv-wrap .cv-details { margin: .3rem 0 0; padding-left: 18px; }
   .cv-wrap .cv-details li { margin: 2px 0; }
 </style>
