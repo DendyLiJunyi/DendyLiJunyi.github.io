@@ -66,13 +66,14 @@
       @bottom-center { content: counter(page); font: 9pt Georgia, serif; color:#666; }
     }
     @media print {
-      body { background:#fff; font-size:11pt; line-height:1.45; }
+      body { background:#fff; font-size:11pt; line-height:1.4; }
       .cv-toolbar { display:none !important; }
       .cv-sheet { max-width:none; margin:0; padding:0; box-shadow:none; }
       a { color:inherit !important; }
-      .cv-section { margin-top:20px; }
-      .cv-section-title { break-after:avoid; page-break-after:avoid; }
-      .cv-entry { break-inside:avoid; }
+      .cv-section { margin-top:16px; }
+      .cv-section-title { margin-bottom:9px; break-after:avoid; page-break-after:avoid; }
+      .cv-entry { margin-bottom:11px; break-inside:avoid; }
+      .cv-details { margin-top:4px; }
       .cv-entry-head, .cv-entry-sub { break-after:avoid; }
       .cv-page-break { break-before:page; page-break-before:always; margin-top:0; }
       p, li { orphans:3; widows:3; }

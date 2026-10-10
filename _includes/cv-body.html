@@ -24,6 +24,9 @@
   {%- if section.text %}<p class="cv-section-text">{{ section.text }}</p>{% endif -%}
   {%- for e in section.entries %}
   <div class="cv-entry">
+    {%- if e.citation %}
+    <p class="cv-section-text">{{ e.citation }}</p>
+    {%- else %}
     <div class="cv-entry-head">
       <div class="cv-entry-title">
         {%- if e.url %}<a href="{{ e.url }}">{{ e.title }}</a>{% else %}{{ e.title }}{% endif -%}
@@ -38,6 +41,7 @@
     <ul class="cv-details">
       {%- for d in e.details %}<li>{{ d }}</li>{% endfor -%}
     </ul>
+    {%- endif -%}
     {%- endif -%}
   </div>
   {%- endfor -%}

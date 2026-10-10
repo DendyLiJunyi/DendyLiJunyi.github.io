@@ -20,7 +20,7 @@ This report and the rendering helper are under `tools/`, which `_config.yml` exc
 
 ## Update — 10 October 2026
 
-ArkLib was omitted from the CV at Junyi’s request. The remaining section is titled “Selected Projects.” ArkLib verification is no longer a submission blocker for this version. The previously generated PDF predates this removal and must be re-exported before use.
+ArkLib was omitted from the CV at Junyi’s request. The remaining section is titled “Selected Projects.” ArkLib verification is no longer a submission blocker for this version. The PDF was subsequently re-exported with ArkLib removed.
 
 ## Other factual questions and evidence limits
 
@@ -54,3 +54,7 @@ Completed checks:
 - Website, GitHub profile, and reconstructed branch returned HTTP 200. The mailto target matches the displayed address; mailbox delivery was not tested and no email was sent.
 - Publication link reachability is limited by IEEE's verification response; no publication links or unverified citations were inserted into the CV.
 - Only CV-related source and tooling changed. Unrelated About-page claims were left untouched.
+
+## Compact print layout — 10 October 2026
+
+Removed the forced page break before Selected Projects. Kept 11 pt body text and the existing A4 margins; reduced print line-height from 1.45 to 1.4, section spacing from 20 to 16 px, heading bottom spacing from 12 to 9 px, entry spacing from 14 to 11 px, and bullet-list top spacing from 6 to 4 px. All three selected projects now fit on page 1; training and skills flow onto page 2. Page 2 remains shorter pending verified publication content. Regenerated `/private/tmp/Junyi-Li-CV.pdf` and visually inspected both pages: two A4 pages, intact entries, no clipped text, and page numbers retained. YAML/Liquid rendering and `git diff --check` passed.

@@ -51,7 +51,6 @@ sections:
           - Designed an LLM-assisted prover for Gaokao-style problems, combining retrieval-augmented generation (RAG) with a Lean formalization pipeline.
 
   - title: Selected Projects
-    print_break: true
     entries:
       - title: Abstract Algebra Data Annotation
         subtitle: BICMR, Peking University
@@ -72,7 +71,21 @@ sections:
         details:
           - Contributed to group formalization of basic definitions in convex analysis using Lean.
 
-  # Add Publications here once author order and full metadata are verified.
+  - title: Publications
+    entries:
+      - citation: >-
+          S. Lei, X. Guo, <strong>J. Li</strong>, Y. Wang, Y. Zhang, L. Zheng, and H. Wu.
+          “Dissatisfaction Feedback and Stackelberg Game-Based Task Offloading
+          Mechanism for Parked Vehicle Edge Computing.”
+          <em>IEEE Transactions on Vehicular Technology</em>, vol. 73, no. 3,
+          pp. 4383–4388, 2024.
+          DOI: <a href="https://doi.org/10.1109/TVT.2023.3327395">10.1109/TVT.2023.3327395</a>.
+      - citation: >-
+          <strong>J. Li</strong>, Y. Wang, S. Lei, X. Guo, L. Zheng, Y. Zhang, and H. Wu.
+          “Intelligent Parking Lot System Based on Automatic Parking Hybrid Controller.”
+          In <em>2023 China Automation Congress (CAC)</em>, pp. 245–250, 2023.
+          DOI: <a href="https://doi.org/10.1109/CAC59555.2023.10451102">10.1109/CAC59555.2023.10451102</a>.
+
   - title: Summer Schools and Additional Training
     entries:
       - title: Oregon Programming Languages Summer School (OPLSS 2026)
