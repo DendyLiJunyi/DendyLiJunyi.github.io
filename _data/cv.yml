@@ -50,12 +50,9 @@ sections:
           - Developed a Lean lemma library for Chinese Gaokao mathematics, covering sequences and calculus.
           - Designed an LLM-assisted prover for Gaokao-style problems, combining retrieval-augmented generation (RAG) with a Lean formalization pipeline.
 
-  - title: Selected Projects and Open-Source Contributions
+  - title: Selected Projects
     print_break: true
     entries:
-      - title: ArkLib
-        subtitle: Open-source contributor — Lean 4 · Sumcheck · Verified-zkEVM
-        # Existing claim retained pending confirmation; see tools/cv-review.md.
       - title: Abstract Algebra Data Annotation
         subtitle: BICMR, Peking University
         date: Dec 2024 – Feb 2025
