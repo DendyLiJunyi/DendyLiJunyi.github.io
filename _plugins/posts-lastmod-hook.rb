@@ -7,10 +7,23 @@ require 'open3'
 Jekyll::Hooks.register :posts, :post_init do |post|
   history_for = lambda do |path|
     output, status = Open3.capture2(
-      'git', 'log', '--follow', '-2', '--pretty=%ad', '--date=iso', '--', path,
+      'git', 'log', '--follow', '--pretty=commit-date:%ad', '--date=iso',
+      '--numstat', '--', path,
       chdir: post.site.source
     )
-    status.success? ? output.lines.map(&:strip) : []
+    next [] unless status.success?
+
+    # A folder-only move must not appear as a new content update.
+    date = nil
+    output.lines.filter_map do |line|
+      if line.start_with?('commit-date:')
+        date = line.delete_prefix('commit-date:').strip
+        next
+      end
+
+      added, removed = line.split("\t", 3)
+      date if added.to_i.positive? || removed.to_i.positive?
+    end
   end
 
   history = history_for.call(post.path)
