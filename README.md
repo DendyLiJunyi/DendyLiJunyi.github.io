@@ -25,6 +25,31 @@ This starter bundles those files from the latest **Chirpy** release along with a
 
 Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
 
+### Writing folders
+
+Documents in `_posts` are grouped by their purpose:
+
+| Folder | Contents |
+| --- | --- |
+| `essays/` | Personal reflections, life, and academic experiences (随笔) |
+| `book-notes/` | Book reviews, reading notes, and unfinished notes about books (读书笔记) |
+| `creative-writing/` | Stories and poetry (创作与诗词) |
+| `drafts/` | Miscellaneous drafts and works in progress (草稿) |
+
+Add new documents to the appropriate folder. For a publishable post, keep the
+`YYYY-MM-DD-title.md` filename and YAML front matter. Undated notes and empty
+placeholders remain unpublished until they are given a valid post filename and
+front matter.
+
+These folders organize source files; the front matter still controls the site's
+categories. The configured `/posts/:title/` permalink keeps post URLs independent
+of these folders.
+
+The `drafts/` folder here is **not** Jekyll's special `_drafts` folder. Its dated
+posts with front matter remain eligible for publication, as before; a `draft`
+category does not hide them. To keep a dated post unpublished, set
+`published: false` in its front matter.
+
 ## Contributing
 
 This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
