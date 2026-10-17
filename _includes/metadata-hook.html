@@ -1,0 +1,77 @@
+<!--
+  Time-based color scheme.
+
+  Chirpy's "System" option follows the OS `prefers-color-scheme`. Here it
+  follows the viewer's local clock instead: light from 07:00 to 19:00, dark
+  otherwise. An explicit Light/Dark choice from the sidebar toggle is still
+  stored in localStorage and always wins.
+
+  This file is included at the end of <head>, after `theme.min.js` has defined
+  `Theme`, and before <body> renders, so there is no flash of the wrong theme.
+-->
+<script>
+  (function () {
+    if (!window.Theme || !Theme.isToggleable) return;
+
+    var LIGHT_FROM = 7;
+    var DARK_FROM = 19;
+    var root = document.documentElement;
+    var originalUpdate = Theme.update;
+
+    function clockTheme() {
+      var hour = new Date().getHours();
+      return hour >= LIGHT_FROM && hour < DARK_FROM ? Theme.Mode.LIGHT : Theme.Mode.DARK;
+    }
+
+    function savedTheme() {
+      try {
+        return localStorage.getItem('theme');
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function applyClockTheme() {
+      if (savedTheme()) return;
+      var next = clockTheme();
+      if (root.dataset.bsTheme !== next) {
+        root.dataset.bsTheme = next;
+        window.postMessage({ id: Theme.eventId }, '*');
+      }
+    }
+
+    /* Other theme scripts (Mermaid, comments) read `Theme.resolvedTheme`. */
+    Object.defineProperty(Theme, 'resolvedTheme', {
+      configurable: true,
+      get: function () {
+        return savedTheme() || clockTheme();
+      }
+    });
+
+    /* Choosing "System" in the toggle means "follow the clock". */
+    Theme.update = function (mode) {
+      originalUpdate.call(Theme, mode);
+      if (mode === Theme.Mode.SYSTEM) applyClockTheme();
+    };
+
+    /* Chirpy re-applies the OS scheme when it changes; put the clock back. */
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyClockTheme);
+
+    /* Switch at 07:00 / 19:00 if the page stays open. */
+    setInterval(applyClockTheme, 60 * 1000);
+
+    applyClockTheme();
+  })();
+</script>
+
+{%- comment -%}
+  Render math in homepage previews. Chirpy loads MathJax only on pages with
+  `math: true`, so load it on the home page when any post listed there has math.
+{%- endcomment -%}
+{% if page.layout == 'home' and paginator.posts %}
+  {% assign math_posts = paginator.posts | where: 'math', true %}
+  {% if math_posts.size > 0 %}
+    <script src="{{ '/assets/js/data/mathjax.js' | relative_url }}"></script>
+    <script id="MathJax-script" async src="{{ site.data.origin[type].mathjax.js | relative_url }}"></script>
+  {% endif %}
+{% endif %}

@@ -1,5 +1,6 @@
 ---
 title: Finding Quadratic Residues and Their Square Roots with Fermat's Little Theorem
+description: Using the Legendre symbol $\left(\frac{a}{p}\right)$ to identify quadratic residues, then deriving the square root $a^{(p+1)/4} \bmod p$ with Fermat's little theorem for primes $p \equiv 3 \pmod 4$.
 date: 2026-10-17 00:00:00 +0800
 categories: [Cryptography]
 tags: [number-theory, quadratic-residues, fermats-little-theorem, legendre-symbol]

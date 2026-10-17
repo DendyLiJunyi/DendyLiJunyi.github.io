@@ -1,5 +1,6 @@
 ---
 title: Extended Euclidean Algorithm
+description: Following the Euclidean algorithm's intermediate steps to understand Bezout's identity $u \cdot x + v \cdot y = \gcd(x, y)$ and derive a recursive method for finding modular inverses.
 date: 2026-10-15 00:00:00 +0800
 categories: [Cryptography]
 tags: [number-theory, euclidean-algorithm, modular-inverse]
